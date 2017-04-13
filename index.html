@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>QA Monitoring</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        .results {
+            display: none;
+        }
+        
+        .configuration-property {
+            border: 50px;
+            padding: 10px;
+            float: left;
+            color: gray;
+            font-size: 15px;
+            font-family: 'monospace';
+            position: relative;
+        }
+        
+        .api-configuration,
+        .web-configuration {
+            border: 1px solid gray;
+            float: left;
+            margin: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .api-configuration {
+            width: 280px;
+            height: 280px;
+            clear: both;
+        }
+        
+        .web-configuration {
+            width: 280px;
+            height: 550px;
+        }
+        
+        .btn-save {
+            position: relative;
+            right: 0;
+            bottom: 0;
+        }
+        
+        #title,
+        footer {
+            color: aliceblue;
+            background-color: crimson;
+            height: 90px;
+        }
+        
+        footer {
+            width: 100%;
+            clear: both;
+        }
+        
+        #title {
+            font-size: 30px;
+            font-family: monospace;
+            font-weight: bold;
+            padding: 2%;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 300;
+            line-height: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="title">Configurações</header>
+    <div class="configuration-property">
+        <p>Test Type:</p>
+        <select>
+		<option>Api</option>
+		<option>Mobile</option>
+		<option>Web</option></select>
+    </div>
+    </select>
+    <div class="api-configuration">
+        <form>
+            <div class="configuration-property">Module</div>
+            <input type="text">
+            <div class="configuration-property">Interval</div>
+            <input type="text">
+            <p class="configuration-property">IntervalType
+                <input type="text"></p>
+            <p class="configuration-property">Key
+                <input type="text"></p>
+            <p class="configuration-property">ErrorMail
+                <input type="text"></p>
+            <button class="btn-save">Salvar</button>
+        </form>
+    </div>
+    <div class="web-configuration">
+        <form>
+            <p class="configuration-property">Module
+                <input type="text"></p>
+            <p class="configuration-property">Interval
+                <input type="text"></p>
+            <p class="configuration-property">IntervalType
+                <input type="text"></p>
+            <p class="configuration-property">Ip
+                <input type="text"></p>
+            <p class="configuration-property">Device
+                <input type="text"></p>
+            <p class="configuration-property">Browser
+                <input type="text"></p>
+            <p class="configuration-property">Url
+                <input type="text"></p>
+            <p class="configuration-property">Project ID
+                <input type="text"></p>
+            <p class="configuration-property">Key
+                <input type="text"></p>
+            <p class="configuration-property">ErrorMail
+                <input type="text"></p>
+            <button class="btn-save">Salvar</button>
+        </form>
+    </div>
+    <div class="results">
+        <table border="1">
+            <tr>
+                <td>Module</td>
+                <td>Id</td>
+                <td>Project Id</td>
+                <td>Interval</td>
+                <td>Interval Type</td>
+                <td>Healthcheck Key</td>
+                <td>Mail for Error</td>
+            </tr>
+            <tr>
+                <td>Arquivos</td>
+                <td>api-00813acd-c838-4c3d-8b9c-9a0119f99516</td>
+                <td>apitest-default</td>
+                <td>1</td>
+                <td>Miutely</td>
+                <td>1ea24b61-ac28-4433-8ca8-551c4a4ce6e8</td>
+                <td>kizy.lopes@vtex.com</td>
+            </tr>
+        </table>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
