@@ -9,13 +9,22 @@
             display: none;
         }
         
+        .configuration-property,
+        .configuration-type {
+            color: gray;
+            font-size: 15px;
+            font-family: 'monospace';
+            padding: 10px;
+        }
+        
+        .configuration-type {
+            padding-left: 120px;
+        }
+        
         .configuration-property {
             border: 50px;
             padding: 10px;
             float: left;
-            color: gray;
-            font-size: 15px;
-            font-family: 'monospace';
             position: relative;
         }
         
@@ -25,7 +34,6 @@
             float: left;
             margin: 10px;
             text-align: center;
-            padding: 10px;
         }
         
         .api-configuration {
@@ -72,7 +80,7 @@
 
 <body>
     <header id="title">Configurações</header>
-    <div class="configuration-property">
+    <div class="configuration-type">
         <p>Test Type:</p>
         <select>
 		<option>Api</option>
