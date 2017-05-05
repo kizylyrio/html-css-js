@@ -5,58 +5,10 @@
     <title>QA Monitoring</title>
     <meta charset="utf-8">
     <style type="text/css">
-        .results {
-            display: none;
-        }
-        
-        .configuration-property,
-        .configuration-type {
-            color: gray;
-            font-size: 15px;
-            font-family: 'monospace';
-            padding: 10px;
-        }
-        
-        .configuration-type {
-            padding-left: 120px;
-        }
-        
-        .configuration-property {
-            border: 50px;
-            padding: 10px;
-            float: left;
-            position: relative;
-        }
-        
-        .api-configuration,
-        .web-configuration {
-            border: 1px solid gray;
-            float: left;
-            margin: 10px;
-            text-align: center;
-        }
-        
-        .api-configuration {
-            width: 280px;
-            height: 280px;
-            clear: both;
-        }
-        
-        .web-configuration {
-            width: 280px;
-            height: 550px;
-        }
-        
-        .btn-save {
-            position: relative;
-            right: 0;
-            bottom: 0;
-        }
-        
         #title,
         footer {
             color: aliceblue;
-            background-color: crimson;
+            background-color: black;
             height: 90px;
         }
         
@@ -75,58 +27,107 @@
             font-weight: 300;
             line-height: 90px;
         }
+        
+        .results {
+            display: none;
+        }
+        
+        #cards {
+            padding: 100px;
+            color: gray;
+            font-size: 15px;
+            font-family: 'monospace';
+        }
+        
+        .configuration-option {
+            position: relative;
+            left: 0;
+            margin: 10px;
+        }
+        
+        .api-card,
+        .web-card {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+            margin: 10px;
+        }
+        
+        .input {
+            margin: 10px;
+        }
+        
+        .submit,
+        .label-small,
+        .input-small {
+            position: relative;
+            float: left;
+            clear: both;
+        }
     </style>
 </head>
 
 <body>
     <header id="title">Configurações</header>
-    <div class="configuration-type">
-        <p>Test Type:</p>
-        <select>
+    <div id="cards">
+        <div class="configuration-option">
+            <p>Test Type:</p>
+            <select>
 		<option>Api</option>
 		<option>Mobile</option>
 		<option>Web</option></select>
-    </div>
-    </select>
-    <div class="api-configuration">
-        <form>
-            <div class="configuration-property">Module</div>
-            <input type="text">
-            <div class="configuration-property">Interval</div>
-            <input type="text">
-            <p class="configuration-property">IntervalType
-                <input type="text"></p>
-            <p class="configuration-property">Key
-                <input type="text"></p>
-            <p class="configuration-property">ErrorMail
-                <input type="text"></p>
-            <button class="btn-save">Salvar</button>
-        </form>
-    </div>
-    <div class="web-configuration">
-        <form>
-            <p class="configuration-property">Module
-                <input type="text"></p>
-            <p class="configuration-property">Interval
-                <input type="text"></p>
-            <p class="configuration-property">IntervalType
-                <input type="text"></p>
-            <p class="configuration-property">Ip
-                <input type="text"></p>
-            <p class="configuration-property">Device
-                <input type="text"></p>
-            <p class="configuration-property">Browser
-                <input type="text"></p>
-            <p class="configuration-property">Url
-                <input type="text"></p>
-            <p class="configuration-property">Project ID
-                <input type="text"></p>
-            <p class="configuration-property">Key
-                <input type="text"></p>
-            <p class="configuration-property">ErrorMail
-                <input type="text"></p>
-            <button class="btn-save">Salvar</button>
-        </form>
+        </div>
+        </select>
+        <div class="api-card">
+            <form>
+                <fieldset>
+                    <legend>Api Test</legend>
+                    <p class="input">
+                        <label class="label-small" for="api-module">Module</label>
+                        <input class="input-small" id="api-module" type="text"></p>
+                    <p class="input">
+                        <label class="label-small" for="api-interval">Interval</label>
+                        <input class="input-small" id="api-interval" type="text"></p>
+                    <p class="input">
+                        <label class="label-small" for="api-interval-type">Interval Type</label>
+                        <input class="input-small" id="api-interval-type" type="text"></p>
+                    <p class="input">
+                        <label class="label-small" for="api-healthcheck-key">Healthcheck Key</label>
+                        <input class="input-small" id="api-healthcheck-key" type="text"></p>
+                    <p class="input">
+                        <label class="label-small" for="api-mail">Error Mail</label>
+                        <input class="input-small" id="api-mail" type="text"></p>
+                    <p class="input">
+                        <button class="submit">Salvar</button></p>
+                </fieldset>
+            </form>
+        </div>
+        <div class="web-card">
+            <form>
+                <p>Module</p>
+                <input type="text">
+                <p>Interval</p>
+                <input type="text">
+                <p>IntervalType</p>
+                <input type="text">
+                <p>Ip</p>
+                <input type="text">
+                <p>Device</p>
+                <input type="text">
+                <p>Browser</p>
+                <input type="text">
+                <p>Url</p>
+                <input type="text">
+                <p>Project ID</p>
+                <input type="text">
+                <p>Key</p>
+                <input type="text">
+                <p>ErrorMail</p>
+                <input type="text">
+                <button class="btn-save">Salvar</button>
+            </form>
+        </div>
     </div>
     <div class="results">
         <table border="1">
