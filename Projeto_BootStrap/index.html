@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cadastro</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Cadastro de Configurações</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Mode: UI</h3>
+                <form class="form-group">
+
+                    <label for="module">Module</label>
+                    <input type="text" class="form-control" id="module">
+
+                    <label for="environment">Environment</label>
+                    <input type="text" class="form-control" id="environment" placeholder="ex: stable">
+
+                    <label for="interval">Interval</label>
+                    <input type="text" class="form-control" id="interval">
+
+                    <label for="interval-type">Interval Type</label>
+                    <select id="interval-type" class="form-control">
+                        <option>Minutely</option>
+                        <option>Hourly</option>
+                        <option>Daily</option>
+                        </select>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="send-mail"> Send error to email </label>
+                    </div>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
+
+                    <button type="submit" class="btn btn-success">Gravar</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h3>Mode: Api</h3>
+                <form class="form-group">
+
+                    <label for="module">Module</label>
+                    <input type="text" class="form-control" id="module">
+
+                    <label for="environment">Environment</label>
+                    <input type="text" class="form-control" id="environment" placeholder="ex: stable">
+
+                    <label for="ip">IP</label>
+                    <input type="text" class="form-control" id="ip" placeholder="10.0.0.1">
+
+                    <label for="device">Device</label>
+                    <select id="device" class="form-control">
+                        <option>Desktop</option>
+                        <option>Apple iPhone 5</option>
+                    </select>
+
+                    <label for="browser">Browser</label>
+                    <select id="browser" class="form-control">
+                        <option>Chrome</option>
+                        <option>Firefox</option>
+                    </select>
+
+                    <label for="url">URL</label>
+                    <input type="url" class="form-control" id="url" placeholder="https://myhostname.host.com.br">
+
+                    <label for="project-id">Project ID</label>
+                    <select id="project-id" class="form-control">
+                        <option>Compras</option>
+                        <option>InStore</option>
+                        <option>Loja Integrada</option>
+                        <option>Loja Integrada (Admin)</option>
+                    </select>
+
+                    <label for="interval">Interval</label>
+                    <input type="text" class="form-control" id="interval">
+
+                    <label for="interval-type">Interval Type</label>
+                    <select id="interval-type" class="form-control">
+                        <option>Minutely</option>
+                        <option>Hourly</option>
+                        <option>Daily</option>
+                        </select>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="send-mail"> Send error to email </label>
+                    </div>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
+
+                    <button type="submit" class="btn btn-success">Gravar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
