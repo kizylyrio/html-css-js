@@ -6,11 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" type="image/gif" href="bot-icon.png" />
     <title>Cadastro</title>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,104 +27,217 @@
 </head>
 
 <body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
     <div class="container">
+
         <div class="page-header">
             <h1>Cadastro de Configurações</h1>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Mode: UI</h3>
-                <form class="form-group">
+        <div id="register">
 
-                    <label for="module">Module</label>
-                    <input type="text" class="form-control" id="module">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#api-configuration" aria-controls="api-configuration" role="tab" data-toggle="tab">Api Test</a></li>
+                <li role="presentation"><a href="#web-configuration" aria-controls="web-configuration" role="tab" data-toggle="tab">Web Test</a></li>
+            </ul>
 
-                    <label for="environment">Environment</label>
-                    <input type="text" class="form-control" id="environment" placeholder="ex: stable">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="api-configuration" role="tabpanel" class="tab-pane active col-md-4">
+                    <form class="form-group">
 
-                    <label for="interval">Interval</label>
-                    <input type="text" class="form-control" id="interval">
+                        <label for="module">Module</label>
+                        <input type="text" class="form-control" id="module">
 
-                    <label for="interval-type">Interval Type</label>
-                    <select id="interval-type" class="form-control">
+                        <label for="environment">Environment</label>
+                        <input type="text" class="form-control" id="environment" placeholder="ex: stable">
+
+                        <label for="interval">Interval</label>
+                        <input type="text" class="form-control" id="interval">
+
+                        <label for="interval-type">Interval Type</label>
+                        <select id="interval-type" class="form-control">
                         <option>Minutely</option>
                         <option>Hourly</option>
                         <option>Daily</option>
                         </select>
 
-                    <div class="checkbox">
-                        <label><input type="checkbox" id="send-mail"> Send error to email </label>
-                    </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="send-mail"> Send Success Details to Healthcheck? </label>
+                        </div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
+                        <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#api-configuration-view">Gravar</button>
+                        <!--<button type="submit" class="btn btn-success">Gravar</button>-->
 
-                    <button type="submit" class="btn btn-success">Gravar</button>
-                </form>
-            </div>
-            <div class="col-md-4">
-                <h3>Mode: Api</h3>
-                <form class="form-group">
+                    </form>
+                </div>
+                <div id="web-configuration" role="tabpanel" class="tab-pane">
+                    <form class="form-group">
 
-                    <label for="module">Module</label>
-                    <input type="text" class="form-control" id="module">
+                        <div class="col-md-4">
+                            <label for="module">Module</label>
+                            <input type="text" class="form-control" id="module">
 
-                    <label for="environment">Environment</label>
-                    <input type="text" class="form-control" id="environment" placeholder="ex: stable">
+                            <label for="url">URL</label>
+                            <input type="url" class="form-control" id="url" placeholder="https://myhostname.host.com.br">
 
-                    <label for="ip">IP</label>
-                    <input type="text" class="form-control" id="ip" placeholder="10.0.0.1">
-
-                    <label for="device">Device</label>
-                    <select id="device" class="form-control">
+                            <label for="device">Device</label>
+                            <select id="device" class="form-control">
                         <option>Desktop</option>
                         <option>Apple iPhone 5</option>
                     </select>
 
-                    <label for="browser">Browser</label>
-                    <select id="browser" class="form-control">
+                            <label for="browser">Browser</label>
+                            <select id="browser" class="form-control">
                         <option>Chrome</option>
                         <option>Firefox</option>
                     </select>
 
-                    <label for="url">URL</label>
-                    <input type="url" class="form-control" id="url" placeholder="https://myhostname.host.com.br">
+                            <label for="environment">Environment</label>
+                            <input type="text" class="form-control" id="environment" placeholder="ex: stable">
 
-                    <label for="project-id">Project ID</label>
-                    <select id="project-id" class="form-control">
-                        <option>Compras</option>
-                        <option>InStore</option>
-                        <option>Loja Integrada</option>
-                        <option>Loja Integrada (Admin)</option>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label for="project-id">Project ID</label>
+                            <select id="project-id" class="form-control">
+                        <option>Purchase</option>
+                        <option>In Store</option>
                     </select>
+                            <label for="ip">IP</label>
+                            <input type="text" class="form-control" id="ip" placeholder="172.0.0.1:80">
 
-                    <label for="interval">Interval</label>
-                    <input type="text" class="form-control" id="interval">
 
-                    <label for="interval-type">Interval Type</label>
-                    <select id="interval-type" class="form-control">
+
+                            <label for="interval">Interval</label>
+                            <input type="text" class="form-control" id="interval">
+
+                            <label for="interval-type">Interval Type</label>
+                            <select id="interval-type" class="form-control">
                         <option>Minutely</option>
                         <option>Hourly</option>
                         <option>Daily</option>
                         </select>
 
-                    <div class="checkbox">
-                        <label><input type="checkbox" id="send-mail"> Send error to email </label>
-                    </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="send-mail"> Send Success Details to Healthcheck? </label>
+                            </div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
+                            <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#web-configuration-view">Gravar</button>
+                            <!--<button type="submit" class="btn btn-success">Gravar</button>-->
+                        </div>
 
-                    <button type="submit" class="btn btn-success">Gravar</button>
-                </form>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="view" class="row">
+            <div id="api-configuration-view" class="col-xs-12 collapse">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Module</th>
+                            <th>Environment</th>
+                            <th>Interval</th>
+                            <th>Interval Type</th>
+                            <th>Success Log on HC?</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>api-432e0a06-ec61-4c04-ba47-30f3cdca3e0b</td>
+                            <td>Arquivos</td>
+                            <td>stable</td>
+                            <td>1</td>
+                            <td>Minutely</td>
+                            <td align="center">
+                                <div class="glyphicon glyphicon-unchecked"></div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>api-59f812ed-3793-4e74-b52d-b7d0fd555c01</td>
+                            <td>Checkout</td>
+                            <td>stable</td>
+                            <td>2</td>
+                            <td>Minutely</td>
+                            <td align="center">
+                                <div class="glyphicon glyphicon-ok"></div>
+                            </td>
+                            <td>kizylirio@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="web-configuration-view" class="col-xs-12 collapse">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Module</th>
+                            <th>Environment</th>
+                            <th>IP</th>
+                            <th>Device</th>
+                            <th>Browser</th>
+                            <th>URL</th>
+                            <th>Project ID</th>
+                            <th>Interval</th>
+                            <th>Interval Type</th>
+                            <th>Success Log on HC?</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>api-432e0a06-ec61-4c04-ba47-30f3cdca3e0b</td>
+                            <td>Purchase</td>
+                            <td>stable</td>
+                            <td>172.0.0.1:80</td>
+                            <td>Desktop</td>
+                            <td>Chrome</td>
+                            <td>https://myhostname.host.com</td>
+                            <td>Default Purchase</td>
+                            <td>2</td>
+                            <td>Minutely</td>
+                            <td align="center">
+                                <div class="glyphicon glyphicon-unchecked"></div>
+                            </td>
+
+                            <!--<td class="form-check disabled">
+                                <input class="form-check-input" type="checkbox" value="" disabled>
+                            </td>-->
+                            <td>kizylirio@gmail.com</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>api-432e0a06-ec61-4c04-ba47-30f3cdca3e0b</td>
+                            <td>In Store</td>
+                            <td>stable</td>
+                            <td>172.0.0.1:80</td>
+                            <td>Apple iPhone 5</td>
+                            <td>Chrome</td>
+                            <td>https://myhostname.host.com</td>
+                            <td>In Store</td>
+                            <td>5</td>
+                            <td>Minutely</td>
+                            <td align="center">
+                                <div class="glyphicon glyphicon-ok"></div>
+                            </td>
+                            <td>kizylirio@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
