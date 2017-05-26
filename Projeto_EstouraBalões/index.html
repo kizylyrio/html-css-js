@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Início</title>
+
+    <script language='Javascript'>
+        function startGame() {
+            var level = document.getElementById('level').value;
+            window.location.href = 'game.html?level=' + level;
+        }
+    </script>
+</head>
+
+<body>
+    <div style="display:block; margin: 10px;">
+        <span style="display: block; margin: 10px 0px;">Selecione o nível de dificuldade</span>
+        <select id="level">
+			<option value="easy">Easy</option>
+			<option value="medium">Medium</option>
+			<option value="hard">Hard</option>
+		</select>
+    </div>
+    <div style="display:block; margin: 10px, 0px;">
+        <img src="img/start.png" onclick="startGame()">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+.menu {
+    float: left;
+    width: 140px;
+    height: 400px;
+    background-color: green;
+}
+
+.balloon-menu {
+    position: relative;
+    margin: 20px;
+}
+
+.balloon-count {
+    position: absolute;
+    top: 30%;
+    margin: 0px 10px;
+    font-size: 30px;
+}
+
+.game-background {
+    float: left;
+    width: 600px;
+    height: 400px;
+    background-color: blue;
+    background: url('../img/background.png');
+    background-position: bottom;
+}
+
+.schedule {
+    position: relative;
+    background-image: url('../img/schedule.png');
+    background-repeat: no-repeat;
+    height: 140px;
+}
+
+#timer {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    font-size: 28px;
+}

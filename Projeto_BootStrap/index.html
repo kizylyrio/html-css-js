@@ -24,6 +24,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+        function saveConfiguration() {
+            alert('Configuração Gravada!');
+        }
+    </script>
 </head>
 
 <body>
@@ -67,7 +73,9 @@
 
                         <label for="email">E-mail</label>
                         <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
-                        <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#api-configuration-view">Gravar</button>
+                        <button type="button" class="btn btn-success" onclick="saveConfiguration()">Gravar</button>
+
+                        <!--<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#api-configuration-view">Gravar</button>-->
                         <!--<button type="submit" class="btn btn-success">Gravar</button>-->
 
                     </form>
@@ -127,7 +135,10 @@
 
                             <label for="email">E-mail</label>
                             <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
-                            <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#web-configuration-view">Gravar</button>
+
+                            <button type="button" class="btn btn-success" onclick="saveConfiguration()">Gravar</button>
+
+                            <!--<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#web-configuration-view">Gravar</button>-->
                             <!--<button type="submit" class="btn btn-success">Gravar</button>-->
                         </div>
 
