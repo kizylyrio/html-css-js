@@ -17,6 +17,10 @@
     font-size: 30px;
 }
 
+.balloon {
+    margin: 5px;
+}
+
 .game-background {
     float: left;
     width: 600px;
