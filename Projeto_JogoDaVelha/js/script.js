@@ -74,7 +74,6 @@ function startGame() {
         }
 
         $("#" + this.id).off();
-        move++;
 
         if (move == 9) {
             setTimeout(function() {
@@ -83,6 +82,8 @@ function startGame() {
 
             $(".game-field").off();
         }
+
+        move++;
     })
 }
 
