@@ -2,7 +2,6 @@
     float: left;
     width: 140px;
     height: 400px;
-    background-color: green;
 }
 
 .balloon-menu {
@@ -39,7 +38,8 @@
 
 #timer {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 40%;
     font-size: 28px;
+    color: red;
 }

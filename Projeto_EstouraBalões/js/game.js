@@ -5,7 +5,7 @@
             var level = getValue(parameters[0]);
 
             var totalBalloons = 104;
-            var burstedBallons = 0;
+            var burstedBalloons = 0;
 
             switch (level) {
                 case "easy":
@@ -25,9 +25,9 @@
             countDown(timeout);
 
             document.getElementById('total-balloons').innerHTML = totalBalloons;
-            createBallons(totalBalloons);
+            createBalloons(totalBalloons);
 
-            document.getElementById('bursted-ballons').innerHTML = burstedBallons;
+            document.getElementById('bursted-balloons').innerHTML = burstedBalloons;
         }
 
         function getValue(parameter) {
@@ -35,14 +35,35 @@
             return properties[1] //value;
         }
 
-        function createBallons(totalBalloons) {
+        function createBalloons(totalBalloons) {
 
             for (count = 0; count < totalBalloons; count++) {
                 var balloon = document.createElement("img");
                 balloon.src = 'img/small_balloon.png';
                 balloon.setAttribute("class", "balloon");
-
+                balloon.id = 'balloon-' + count;
+                balloon.onclick = function() { burstBalloon(this) };
                 document.getElementById('area').appendChild(balloon);
+            }
+        }
+
+        function burstBalloon(balloon) {
+            if (balloon.src.indexOf("img/small_balloon.png") > -1) {
+                balloon.src = 'img/small_bursted_balloon.png';
+
+                document.getElementById('total-balloons').innerHTML = parseInt(document.getElementById('total-balloons').innerHTML) - 1;
+                document.getElementById('bursted-balloons').innerHTML = parseInt(document.getElementById('bursted-balloons').innerHTML) + 1;
+
+                checkSuccess();
+            }
+        }
+
+        function checkSuccess() {
+            if (parseInt(document.getElementById('total-balloons').innerHTML) == 0) {
+                setTimeout(function() {
+                    alert("You Win!");
+                    clearInterval(timerID);
+                }, 100); //To show the 0s on screen
             }
         }
 
@@ -52,12 +73,12 @@
             var timeout = timeout * 1000; //seconds to miliseconds
 
             //Run count down
-            var timerID = setInterval(function() {
+            timerID = setInterval(function() {
                 timer = timer - 1;
                 document.getElementById('timer').innerHTML = timer;
             }, 1000);
 
-            //Stop count down
+            //Stop count down on failed
             setTimeout(function() {
                 clearInterval(timerID);
                 alert("Game Over");
