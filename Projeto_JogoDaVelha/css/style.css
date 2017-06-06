@@ -1,0 +1,30 @@
+.area {
+    text-align: center;
+}
+
+.player-name {
+    display: block;
+}
+
+.game-field {
+    width: 100px;
+    height: 100px;
+}
+
+.border-bottom-right,
+.border-bottom {
+    border-bottom: 1px solid red;
+}
+
+.border-bottom-right,
+.border-right {
+    border-right: 1px solid red;
+}
+
+.player-1 {
+    background-image: url('../img/tag_1.png');
+}
+
+.player-2 {
+    background-image: url('../img/tag_2.png');
+}
