@@ -55,38 +55,33 @@ function setConfiguration() {
     }
 }
 
-var finished = false;
-
 function startGame() {
     var move = 0;
 
     $(".game-field").click(function() {
-        var className = document.getElementById(this.id).getAttribute("class");
 
-        if (className.indexOf("player") == -1 && !finished) {
+        var fieldId = this.id.split("-");
+        var row = fieldId[0];
+        var col = fieldId[1];
 
-            var fieldId = this.id.split("-");
-            var row = fieldId[0];
-            var col = fieldId[1];
+        if ((move % 2) == 0) {
+            $("#" + this.id).addClass("player-1");
+            setTicTacToe(row, col, "player1");
 
-            if ((move % 2) == 0) {
-                $("#" + this.id).addClass("player-1");
-                setTicTacToe(row, col, "player1");
+        } else {
+            $("#" + this.id).addClass("player-2");
+            setTicTacToe(row, col, "player2");
+        }
 
-            } else {
-                $("#" + this.id).addClass("player-2");
-                setTicTacToe(row, col, "player2");
-            }
+        $("#" + this.id).off();
+        move++;
 
-            move++;
+        if (move == 9) {
+            setTimeout(function() {
+                alert("Deu Velha!");
+            }, 500);
 
-            if (move == 9) {
-                setTimeout(function() {
-                    alert("Deu Velha!");
-                }, 500);
-
-                finished = true;
-            }
+            $(".game-field").off();
         }
     })
 }
@@ -154,7 +149,7 @@ function setTicTacToe(row, col, playerName) {
                 alert($("#player-1-name").text() + " Ganhou!");
             }, 100);
 
-            finished = true;
+            $(".game-field").off();
         }
 
         if (player2Row == 3 || player2Col == 3 || player2LDiag == 3 || player2RDiag == 3) {
@@ -162,7 +157,7 @@ function setTicTacToe(row, col, playerName) {
                 alert($("#player-2-name").text() + " Ganhou!");
             }, 100);
 
-            finished = true;
+            $(".game-field").off();
         }
     }
 }
