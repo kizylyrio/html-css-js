@@ -51,97 +51,99 @@
                 <div id="api-configuration" role="tabpanel" class="tab-pane active col-md-4">
                     <form class="form-group">
 
-                        <label for="module">Module</label>
-                        <input type="text" class="form-control" id="module">
+                        <label for="api-module">Module</label>
+                        <input type="text" class="form-control" id="api-module">
 
-                        <label for="environment">Environment</label>
-                        <input type="text" class="form-control" id="environment" placeholder="ex: stable">
+                        <label for="api-environment">Environment</label>
+                        <input type="text" class="form-control" id="api-environment" placeholder="ex: stable">
 
-                        <label for="interval">Interval</label>
-                        <input type="text" class="form-control" id="interval">
+                        <label for="api-interval">Interval</label>
+                        <input type="text" class="form-control" id="api-interval">
 
-                        <label for="interval-type">Interval Type</label>
-                        <select id="interval-type" class="form-control">
+                        <label for="api-interval-type">Interval Type</label>
+                        <select id="api-interval-type" class="form-control">
                         <option>Minutely</option>
                         <option>Hourly</option>
                         <option>Daily</option>
                         </select>
 
                         <div class="checkbox">
-                            <label><input type="checkbox" id="send-mail"> Send Success Details to Healthcheck? </label>
+                            <label for="api-send-mail">
+                                <input type="checkbox" id="api-send-mail">
+                                Send Success Details to Healthcheck? 
+                            </label>
                         </div>
 
-                        <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
-                        <button type="button" class="btn btn-success" onclick="saveConfiguration()">Gravar</button>
+                        <label for="api-email">E-mail</label>
+                        <input type="email" class="form-control" id="api-email" placeholder="my@email.com, your@email.com">
 
                         <!--<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#api-configuration-view">Gravar</button>-->
                         <!--<button type="submit" class="btn btn-success">Gravar</button>-->
 
+                        <div class="submit">
+                            <button type="button" class="btn btn-success" onclick="saveConfiguration()">Gravar</button>
+                        </div>
                     </form>
                 </div>
                 <div id="web-configuration" role="tabpanel" class="tab-pane">
                     <form class="form-group">
-
                         <div class="col-md-4">
-                            <label for="module">Module</label>
-                            <input type="text" class="form-control" id="module">
+                            <label for="web-module">Module</label>
+                            <input type="text" class="form-control" id="web-module">
 
-                            <label for="url">URL</label>
-                            <input type="url" class="form-control" id="url" placeholder="https://myhostname.host.com.br">
+                            <label for="web-url">URL</label>
+                            <input type="url" class="form-control" id="web-url" placeholder="https://myhostname.host.com.br">
 
-                            <label for="device">Device</label>
-                            <select id="device" class="form-control">
-                        <option>Desktop</option>
-                        <option>Apple iPhone 5</option>
-                    </select>
+                            <label for="web-device">Device</label>
+                            <select id="web-device" class="form-control">
+                                <option>Desktop</option>
+                                <option>Apple iPhone 5</option>
+                                </select>
 
-                            <label for="browser">Browser</label>
-                            <select id="browser" class="form-control">
-                        <option>Chrome</option>
-                        <option>Firefox</option>
-                    </select>
+                            <label for="web-browser">Browser</label>
+                            <select id="web-browser" class="form-control">
+                                <option>Chrome</option>
+                                <option>Firefox</option>
+                                </select>
 
-                            <label for="environment">Environment</label>
-                            <input type="text" class="form-control" id="environment" placeholder="ex: stable">
-
+                            <label for="web-environment">Environment</label>
+                            <input type="text" class="form-control" id="web-environment" placeholder="ex: stable">
                         </div>
 
-
                         <div class="col-md-4">
-                            <label for="project-id">Project ID</label>
-                            <select id="project-id" class="form-control">
-                        <option>Purchase</option>
-                        <option>In Store</option>
-                    </select>
-                            <label for="ip">IP</label>
-                            <input type="text" class="form-control" id="ip" placeholder="172.0.0.1:80">
+                            <label for="web-project-id">Project ID</label>
+                            <select id="web-project-id" class="form-control">
+                                <option>Purchase</option>
+                                <option>In Store</option>
+                            </select>
 
+                            <label for="web-ip">IP</label>
+                            <input type="text" class="form-control" id="web-ip" placeholder="172.0.0.1:80">
 
+                            <label for="web-interval">Interval</label>
+                            <input type="text" class="form-control" id="web-interval">
 
-                            <label for="interval">Interval</label>
-                            <input type="text" class="form-control" id="interval">
-
-                            <label for="interval-type">Interval Type</label>
-                            <select id="interval-type" class="form-control">
-                        <option>Minutely</option>
-                        <option>Hourly</option>
-                        <option>Daily</option>
-                        </select>
+                            <label for="web-interval-type">Interval Type</label>
+                            <select id="web-interval-type" class="form-control">
+                                <option>Minutely</option>
+                                <option>Hourly</option>
+                                <option>Daily</option>
+                            </select>
 
                             <div class="checkbox">
-                                <label><input type="checkbox" id="send-mail"> Send Success Details to Healthcheck? </label>
+                                <label for="web-send-mail">
+                                    <input type="checkbox" id="web-send-mail">
+                                     Send Success Details to Healthcheck?
+                                </label>
                             </div>
 
-                            <label for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="my@email.com, your@email.com">
+                            <label for="web-email">E-mail</label>
+                            <input type="email" class="form-control" id="web-email" placeholder="my@email.com, your@email.com">
 
-                            <button type="button" class="btn btn-success" onclick="saveConfiguration()">Gravar</button>
-
-                            <!--<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#web-configuration-view">Gravar</button>-->
-                            <!--<button type="submit" class="btn btn-success">Gravar</button>-->
+                            <div class="submit">
+                                <button type="button" class="btn btn-success" onclick="saveConfiguration()">Gravar</button>
+                            </div>
                         </div>
-
                     </form>
                 </div>
             </div>

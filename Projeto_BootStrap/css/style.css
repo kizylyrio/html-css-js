@@ -13,3 +13,11 @@
 #web-configuration-view {
     /*display: none;*/
 }
+
+.submit {
+    margin: 20px 0px;
+}
+
+.form-group label {
+    margin: 10px 0px 5px;
+}
