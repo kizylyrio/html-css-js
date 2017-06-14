@@ -1,14 +1,9 @@
-var express = require('express');
-var app = express();
+var app = require('./config/server');
 
-//View
-app.set('view engine', 'ejs');
+var homeRoute = require('./app/routes/home')(app);
+var pageNotFoundRoute = require('./app/routes/pageNotFound')(app);
 
-//Requests
-app.get("/", function(request, response) {
-    response.render("status/ok.ejs");
-})
-
+//Start server
 app.listen(3000, function() {
-    console.log("Ok");
+    console.log("OK");
 })
