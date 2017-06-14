@@ -1,8 +1,12 @@
 var express = require('express');
 var app = express();
 
+//View
+app.set('view engine', 'ejs');
+
+//Requests
 app.get("/", function(request, response) {
-    response.send("<html><body>Server is Running</body><html>");
+    response.render("status/ok.ejs");
 })
 
 app.listen(3000, function() {
