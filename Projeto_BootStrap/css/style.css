@@ -1,17 +1,5 @@
-#view-form {
-    display: none;
-}
-
-#configuration-form {
-    display: none;
-}
-
-#api-configuration-view {
-    /*display: none;*/
-}
-
-#web-configuration-view {
-    /*display: none;*/
+.container {
+    margin: 0px 80px;
 }
 
 .submit {
@@ -20,4 +8,23 @@
 
 .form-group label {
     margin: 10px 0px 5px;
+}
+
+.popup {
+    margin-top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: fixed;
+    backface-visibility: hidden;
+}
+
+.alert {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.disable {
+    display: none;
 }
